@@ -1,9 +1,0 @@
-pipenv run uvicorn base.asgi:application --reload
-
-
-
-python manage.py process_raw_movies
-
-
-
- python manage.py bulk_fetch
