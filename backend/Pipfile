@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pillow = "*"
+django = "*"
+psycopg2 = "*"
+psycopg2-binary = "*"
+django-filter = "*"
+psycopg = {extras = ["binary"], version = "*"}
+python-dotenv = "*"
+telethon = "*"
+django-cors-headers = "*"
+uvicorn = "*"
+djangorestframework = "*"
+aiofiles = "*"
+aiohttp = "*"
+emoji = "*"
+google-generativeai = "*"
+requests = "*"
+google-genai = "*"
+deep-translator = "*"
+daphne = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.14"
