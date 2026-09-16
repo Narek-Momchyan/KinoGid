@@ -6,7 +6,7 @@ import { getMediaUrl } from '@/lib/media';
 import { Metadata } from 'next';
 import { AIChatProps, ChatMessage, RecommendedMovie } from '@/types/aichat';
 
-export const Metadata: Metadata = {
+export const ChatMetadata: Metadata = {
   title: "KinoGid",
   description:"watch movies online for free"
   

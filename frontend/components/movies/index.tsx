@@ -5,11 +5,7 @@ import MovieCard from './movieCard';
 
 import Search from './Search';
 
-export const Metadata: Metadata = {
-  title: "KinoGid",
-  description:"watch movies online for free"
-  
-};
+
 
 export default function MovieList({ movies, lang, title }: MovieListProps) {
     const defaultTitle = lang === 'am' ? 'Բոլոր Ֆիլմերը' : lang === 'ru' ? 'Все Фильмы' : 'All Movies';

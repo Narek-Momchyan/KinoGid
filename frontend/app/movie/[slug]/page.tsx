@@ -20,15 +20,15 @@ export default async function MovieDetailPage({ params }: PageProps) {
         return notFound();
     }
 
-    let title = movie[`title_${lang as 'am'|'ru'|'en'}`] || movie.title_en || movie.title_am;
-    let description = movie[`description_${lang as 'am'|'ru'|'en'}`] || movie.description_en || movie.description_am;
+    let title = movie[`title_${lang as 'am'|'ru'|'en'}`] || movie.title_en || movie.title_am || "";
+    let description = movie[`description_${lang as 'am'|'ru'|'en'}`] || movie.description_en || movie.description_am || "";
 
     const needsTranslationAm = lang === 'am' && (!title || title === movie.title_en);
     const needsTranslationRu = lang === 'ru' && (!title || title.includes('???'));
 
     if (needsTranslationAm || needsTranslationRu) {
-        title = await translateText(movie.title_en || movie.title_am, lang);
-        description = await translateText(movie.description_en || movie.description_am, lang);
+        title = await translateText(movie.title_en || movie.title_am || "", lang);
+        description = await translateText(movie.description_en || movie.description_am || "", lang);
     }
 
     const posterUrl = getMediaUrl(movie.poster);

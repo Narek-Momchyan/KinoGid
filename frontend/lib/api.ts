@@ -15,7 +15,7 @@ export async function getHeaderData(lang: string = 'en'): Promise<HeaderData> {
     const allNavbars: NavbarItem[] = await navbarRes.json();
     const languages: LanguageItem[] = await langRes.json();
 
-    const logo = allLogos.find(l => l.lang === lang) || (allLogos.length > 0 ? allLogos[0] : undefined);
+    const logo = allLogos.find(l => (l as any).lang === lang) || (allLogos.length > 0 ? allLogos[0] : undefined);
     const navbars = allNavbars.filter(n => n.lang === lang);
 
     return {

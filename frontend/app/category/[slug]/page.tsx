@@ -30,9 +30,9 @@ export default async function CategoryPage({
     // Get the category name for the title
     const headerData = await getHeaderData(lang);
     let categoryName = '';
-    headerData.navbar.forEach(nav => {
-        if (nav.items && Array.isArray(nav.items)) {
-            const found = nav.items.find(item => item.slug === slug || item.href === `/category/${slug}`);
+    headerData.navbar?.forEach(nav => {
+        if (nav.categories && Array.isArray(nav.categories)) {
+            const found = nav.categories.find(item => item.slug === slug || item.href === `/category/${slug}`);
             if (found) categoryName = found.name;
         }
     });
