@@ -103,7 +103,7 @@ export default async function MovieDetailPage({ params }: PageProps) {
                 
                 <div className="w-full">
                     <MoviePlayer 
-                        title={title} 
+                        title={title || ""} 
                         lang={lang} 
                         dbVideoUrl={dbVideoUrl} 
                         streamUrl={streamUrl}

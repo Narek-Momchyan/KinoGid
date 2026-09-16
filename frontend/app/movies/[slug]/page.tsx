@@ -33,8 +33,8 @@ export default async function MovieDetailPage({ params }: PageProps) {
     const needsTranslationRu = lang === 'ru' && (!title || title.includes('???'));
 
     if (needsTranslationAm || needsTranslationRu) {
-        title = await translateText(movie.title_en || movie.title_am || "", lang);
-        description = await translateText(movie.description_en || movie.description_am || "", lang);
+        title = (await translateText(movie.title_en || movie.title_am || "", lang)) as string;
+        description = (await translateText(movie.description_en || movie.description_am || "", lang)) as string;
     }
 
     const posterUrl = getMediaUrl(movie.poster);
@@ -66,7 +66,7 @@ export default async function MovieDetailPage({ params }: PageProps) {
                         </div>
                     ) : (
                         <div className="w-56 md:w-80 aspect-[2/3] flex-shrink-0 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(37,99,235,0.25)] border border-gray-800 hidden md:flex items-center justify-center bg-gray-900 group">
-                            <span className="text-8xl text-gray-700 font-bold">{title.charAt(0).toUpperCase()}</span>
+                            <span className="text-8xl text-gray-700 font-bold">{(title || "").charAt(0).toUpperCase()}</span>
                         </div>
                     )}
 
@@ -148,7 +148,7 @@ export default async function MovieDetailPage({ params }: PageProps) {
                 
                 <div className="w-full">
                     <MoviePlayer 
-                        title={title} 
+                        title={title || ""} 
                         lang={lang} 
                         dbVideoUrl={dbVideoUrl} 
                         streamUrl={streamUrl}

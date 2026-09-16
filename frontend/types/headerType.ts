@@ -1,6 +1,7 @@
 export interface LogoData {
     url?: string;
     alt?: string;
+    lang?: string;
 }
 
 export interface NavbarCategory {
