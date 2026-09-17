@@ -147,7 +147,7 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
-
+ALLOWED_HOSTS = ['kinogid.onrender.com', 'localhost', '127.0.0.1']
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_HEADERS = [
