@@ -86,7 +86,18 @@ ASGI_APPLICATION = 'base.asgi.application'
 import os
 from dotenv import load_dotenv
 load_dotenv()
-DATABASES = {
+
+
+
+import dj_database_url
+if 'DATABASE_URL' in os.environ:
+
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+   
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('DB_NAME'),
@@ -96,6 +107,7 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT'),
     }
 }
+
 
 
 

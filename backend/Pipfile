@@ -23,6 +23,7 @@ requests = "*"
 google-genai = "*"
 deep-translator = "*"
 daphne = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
